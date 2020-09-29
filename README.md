@@ -2,21 +2,19 @@
 
 ## Public API
 
-[Public General API](./Public/websocket.md) - General purpose endpoints
+[Public General API](./Public/general.md) - General purpose endpoints
 
-[Public Ads API](./Public/http-v1.md) - Ads management
-
-[Public Wallet API](./Public/http-v2.md) - Wallet management
+[Public Ads API](./Public/ads.md) - Ads management
 
 ___
 
 ## Private API
 
-[Private Ads API](./Private/http-auth.md) - Ads management
+[Private Ads API](./Private/ads.md) - Ads management
 
-[Private Wallet API](./Private/http-v1.md) - Wallet management
+[Private Wallet API](./Private/wallet.md) - Wallet management
 
-[Private Trade API](./Private/http-trade-v4.md) - Private trading endpoints (in progress)
+[Private Trade API](./Private/trade.md) - Private trading endpoints (in progress)
 
 ---
 
@@ -35,13 +33,13 @@ ___
         3. Generate a new key or use an existing one.
     2. Auth request should include:
         1. `'Content-type': 'application/json'`
-        2. `'X-TXC-APIKEY': api_key` - where api_key is your public Bitcoin Global API key
-        3. `'X-TXC-PAYLOAD': nonce'` - where nonce is a timestamp in miliseconds
-        4. `'X-TXC-SIGNATURE': signature` - where signature is `hmac.new(secret_key, payload, hashlib.sha256).hexdigest().upper()`
+        2. `'Apiauth-Key': api_key` - where api_key is your public Bitcoin Global API key
+        3. `'Apiauth-Nonce': nonce'` - where nonce is a timestamp in miliseconds
+        4. `'Apiauth-Signature': signature` - where signature is `hmac.new(secret_key, payload, hashlib.sha256).hexdigest().upper()`
             1. **payload** should be created based on the following values:
                 - `'nonce'` - where nonce is a timestamp in miliseconds
                 - `'api_key'` - where api_key is your public Bitcoin Global API key
                 - `'path'` - where path is method path without base URL (e.g. `'/api/v1/dashboard'`)
-                - `'params'` - where params are urlencoded params of your request (e.g. `'ticker=BTC&limit=15&offset=0'`)
+                - `'params'` - where params is a query string of your request (e.g. `'ticker=BTC&limit=15&offset=0'`)
     3. To help you get started with our API, we've created the [API Quick start helper](./quick-start) library. It supports the following languages:
         1. [Python](./quick-start/python_auth.py)
