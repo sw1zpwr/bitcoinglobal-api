@@ -19,8 +19,9 @@ For receiving responses from API calls please use http method __GET__
 
 If an endpoint requires parameters you should send them as `query string`
 
-#### Error messages V1 format:
 ___
+#### Error messages V1 format:
+
 ```json5
 {
     "error_message": "ERROR MESSAGE"
