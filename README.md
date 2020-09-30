@@ -31,8 +31,8 @@ ___
         1. Go to your account on [Bitcoin Global](https://bitcoin.global).
         2. Click on the Settings -> API tab.
         3. Generate a new key or use an existing one.
-    2. Auth request should include:
-        1. `'Content-type': 'application/json'`
+    2. Auth request to **general, ads, trade** endpoints should include:
+        1. `'Content-type': 'x-www-form-urlencoded'`
         2. `'Apiauth-Key': api_key` - where api_key is your public Bitcoin Global API key
         3. `'Apiauth-Nonce': nonce'` - where nonce is a timestamp in miliseconds
         4. `'Apiauth-Signature': signature` - where signature is `hmac.new(secret_key, payload, hashlib.sha256).hexdigest().upper()`
@@ -41,5 +41,12 @@ ___
                 - `'api_key'` - where api_key is your public Bitcoin Global API key
                 - `'path'` - where path is method path without base URL (e.g. `'/api/v1/dashboard'`)
                 - `'params'` - where params is a query string of your request (e.g. `'ticker=BTC&limit=15&offset=0'`)
-    3. To help you get started with our API, we've created the [API Quick start helper](./quick-start) library. It supports the following languages:
+    3. Auth request to **wallet** endpoints should include:
+        1. `'Content-type': 'application/json'`
+        2. `'Apiauth-Key': api_key` - where api_key is your public Bitcoin Global API key
+        3. `'Apiauth-Nonce': nonce'` - where nonce is a timestamp
+        4. `'Apiauth-Signature': signature` - where signature is `hmac.new(secret_key,"{}{}".format(nonce, dumped_data), hashlib.sha256).hexdigest()`
+            1. **data** should be created based on the following values:
+                - `'request body'` - request body in JSON format
+    4. To help you get started with our API, we've created the [API Quick start helper](./quick-start) library. It supports the following languages:
         1. [Python](./quick-start/python_auth.py)
