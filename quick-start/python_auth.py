@@ -5,7 +5,7 @@ import time
 import hmac
 import hashlib
 ​
-#general, ads, trade
+#general, ads, trade endpoints
 api_key = 'YOUR_API_KEY' #put here your public key
 secret_key = 'YOUR_SECRET_KEY' #put here your secret key
 path = '/api/v1/dashboard' #put here request path. 
@@ -33,7 +33,7 @@ resp = requests.get(completeUrl, headers=headers)
 print(resp)
 
 
-#wallet
+#wallet endpoints
 api_key = 'YOUR_API_KEY'
 secret_key = 'YOUR_SECRET_KEY'
 data = {'id': 435}

@@ -1,6 +1,6 @@
-# Public General Endpoints
+# Private General Endpoints
 
-## Public endpoints V1
+## Private endpoints V1
 
 * [Payment Methods](#payment-methods)
 * [Country Payment Methods](#country-payment-methods)
