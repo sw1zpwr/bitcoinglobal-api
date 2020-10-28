@@ -8,7 +8,7 @@ ___
 
 ## Private API
 
-[General API](./private/general.md) - General purpose endpoints
+[Private General API](./private/general.md) - General purpose endpoints
 
 [Private Ads API](./private/ads.md) - Ads management
 
