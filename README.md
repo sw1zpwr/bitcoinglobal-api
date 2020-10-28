@@ -2,19 +2,19 @@
 
 ## Public API
 
-[Public General API](./Public/general.md) - General purpose endpoints
-
-[Public Ads API](./Public/ads.md) - Ads management
+[Public Ads API](./public/ads.md) - Ads management
 
 ___
 
 ## Private API
 
-[Private Ads API](./Private/ads.md) - Ads management
+[General API](./private/general.md) - General purpose endpoints
 
-[Private Wallet API](./Private/wallet.md) - Wallet management
+[Private Ads API](./private/ads.md) - Ads management
 
-[Private Trade API](./Private/trade.md) - Private trading endpoints (in progress)
+[Private Wallet API](./private/wallet.md) - Wallet management
+
+[Private Trade API](./private/trade.md) - Private trading endpoints (in progress)
 
 ---
 
