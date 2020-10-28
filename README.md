@@ -43,9 +43,9 @@ ___
                 - `'params'` - where params is a query string of your request (e.g. `'ticker=BTC&limit=15&offset=0'`)
     3. Auth request to **wallet** endpoints should include:
         1. `'Content-type': 'application/json'`
-        2. `'Apiauth-Key': api_key` - where api_key is your public Bitcoin Global API key
-        3. `'Apiauth-Nonce': nonce'` - where nonce is a timestamp
-        4. `'Apiauth-Signature': signature` - where signature is `hmac.new(secret_key,"{}{}".format(nonce, dumped_data), hashlib.sha256).hexdigest()`
+        2. `'X-API-KEY': api_key` - where api_key is your public Bitcoin Global API key
+        3. `'X-ACCESS-TIMESTAMP': nonce'` - where nonce is a timestamp
+        4. `'X-ACCESS-SIGN': signature` - where signature is `hmac.new(secret_key,"{}{}".format(nonce, dumped_data), hashlib.sha256).hexdigest()`
             1. **data** should be created based on the following values:
                 - `'request body'` - request body in JSON format
     4. To help you get started with our API, we've created the [API Quick start helper](./quick-start) library. It supports the following languages:
