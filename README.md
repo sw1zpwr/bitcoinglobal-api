@@ -20,7 +20,7 @@ ___
 
 ## Info HTTP
 
-1. WhiteBIT API supports `private` and `public` methods.
+1. Bitcoin Global API supports `private` and `public` methods.
 2. Available API versions: `V1`.
 3. Using **Public endpoints**:
     1. Public endpoints are cached. You can find specific cache refresh interval for each particular request in API documentation.
