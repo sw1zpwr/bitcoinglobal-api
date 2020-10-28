@@ -45,7 +45,7 @@ ___
         1. `'Content-type': 'application/json'`
         2. `'X-API-KEY': api_key` - where api_key is your public Bitcoin Global API key
         3. `'X-ACCESS-TIMESTAMP': nonce'` - where nonce is a timestamp
-        4. `'X-ACCESS-SIGN': signature` - where signature is `hmac.new(secret_key,"{}{}".format(nonce, dumped_data), hashlib.sha256).hexdigest()`
+        4. `'X-ACCESS-SIGN': signature` - HMAC-sha256 request body signature (composed of lines, comprising the timestamp and JSON-representation of the request body data) signed by your private key. For GET requests it should be made with JSON-dump of query parameters. `hmac.new(secret_key,"{}{}".format(nonce, dumped_data), hashlib.sha256).hexdigest()`
             1. **data** should be created based on the following values:
                 - `'request body'` - request body in JSON format
     4. To help you get started with our API, we've created the [API Quick start helper](./quick-start) library. It supports the following languages:
